@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VideoMentheProject</title>
+    </head>
+    <body>
+
+        <div id="root">Eole-Edit project</div>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+
+
+        function MyComponent() {
+            return <div>Eole-Edit project</div>
+        }
+        
+        function Header() {
+            return (<div>
+                <strong><h1>Plateforme de transfert vidéo</h1></strong>
+            </div>)
+        }
+
+        function Description() {
+            return (<p> Ici vous avez la possibilité de voir, gérer et charger vos fichiers vidéos ! </p>)
+        }
+
+
+            ReactDOM.render(<div><MyComponent /><Header /><Description /></div>, document.getElementById("root"))
+        </script>
+
+
+
+
+
+
+        <form action='/upload' method="post" enctype="multipart/form-data">
+            <input type="file" name="cocktail">
+            <input type="submit" value="Upload">
+        </form>
+
+        <%= typeof error !== 'undefined' ? error : '' %>
+
+        <% if(typeof file !== 'undefined'){ %>
+            <img src="../public/uploads/<%=file%>" style="width: 80%;display: block; margin: 5vh auto; object-fit: cover;">
+        <%}%>
+
+    </body>
+</html>
